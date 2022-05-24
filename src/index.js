@@ -1,14 +1,24 @@
-import {myName,page} from './loadPage';
+import {loadPage} from './loadPage';
+import { contactPage} from "./contact";
+import  { aboutPage} from "./about";
+import {homePage} from "./home"
 
 
-function component() {
-    const element = document.createElement('div');
-  
-    // use your function!
-    element.textContent = myName('Jorge');
-    return element;
-  }
-  
-  document.body.appendChild(component());
-page();
-console.log("HI");
+loadPage();
+
+
+const tabSwitch = function(){
+    let home = document.querySelector(".home");
+    let contact = document.querySelector(".contact");
+    let about = document.querySelector(".about");
+
+    home.addEventListener("click",homePage);
+    contact.addEventListener("click",contactPage);
+    about.addEventListener("click",aboutPage);
+}
+
+
+
+
+tabSwitch();
+
